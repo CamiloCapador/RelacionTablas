@@ -1,0 +1,150 @@
+body {
+    background-color:rgb(241, 241, 245);
+}
+
+.container-fluid {
+    max-height: 25vh;
+    background-color: #152349;
+}
+
+.container{
+    background-color: white;
+}
+
+.container-form {
+    background-color: #152349;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: azure;
+}
+
+.header {
+    width: 100%;
+    height: 9vh;
+}
+
+.imagen {
+    width: 80%;
+    height: 85%;
+}
+
+.btn {
+    background-color: #152349;
+    color: azure;
+}
+
+.btn1 {
+    background-color: #152349;
+    color: azure;
+    border: none;
+    width: 9rem;
+    height: 2.4rem;
+}
+
+.btn1:hover{
+    background-color: rgb(241, 241, 245);
+    color: #000;
+    border-radius: 0.1rem;
+}
+
+.column{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.contents{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown{
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    width: 100%;
+    padding: 0px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(2, 1, 51, 0.404);
+    background-color: rgb(241, 241, 245);
+}
+
+.dropdown:hover .dropdown-content{
+    display: block;
+    border-radius: 0.2rem;
+}
+
+.dropdown-content a {
+    display: block;
+    color: #000000;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    color: #FFFFFF;
+    background-color: #152349;
+}
+
+.label{
+    color: azure;
+}
+
+.footer-clean {
+    padding:10px 0;
+    background-color: #152349;
+    color: azure;
+  }
+
+  .footer-clean .item.social {
+    text-align:center;
+  }
+
+  .footer-clean .item.social > a {
+    font-size:24px;
+    width:40px;
+    height:40px;
+    line-height:40px;
+    display:inline-block;
+    text-align:center;
+    border-radius:50%;
+    border:1px solid #ccc;
+    margin-left:10px;
+    margin-top:22px;
+    color:inherit;
+    opacity:0.7;
+  }
+
+  .footer-clean .item.social > a:hover {
+    opacity:0.9;
+  }
+
+  .footer-clean .copyright {
+    margin-top:14px;
+    margin-bottom:0;
+    font-size:14px;
+    opacity:0.9;
+    text-align:center;
+}
+
+@media (max-width: 1903px) {
+
+    .banner{
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 1366px) {
+
+    .banner{
+        width: 100%;
+        height: auto;
+    }
+}
