@@ -21,7 +21,7 @@ public class ContCargo {
         model.addAttribute("titulo", "Ver Cargos");
         model.addAttribute("cuerpo", "Cargos");
         List<Cargo> car = serv.Listar();
-        model.addAttribute("datos", car);
+        model.addAttribute("datosCargo", car);
         return "index";
     }
     @GetMapping("/nuevocargo")

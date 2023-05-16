@@ -102,7 +102,7 @@
       <div class="col-md-4">
         <label class="form-label">Cargo</label>
         <select class="form-select" th:field="*{cargo}" name="cargo" required>
-          <option th:each="i: ${datos}"  th:value="${i.idcargo}" th:text="${i.nombrecargo}" selected> Seleccione Cargo </option>
+          <option th:each="i: ${datosCargo}"  th:value="${i.idcargo}" th:text="${i.nombrecargo}" selected> Seleccione Cargo </option>
         </select>
       </div>
       <div class="col-12">

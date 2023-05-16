@@ -21,7 +21,7 @@ public class ContEstadoElemento {
         model.addAttribute("titulo", "Ver Estado Elementos");
         model.addAttribute("cuerpo", "Estado Elementos");
         List<EstadoElemento> estelem = servi.Listar();
-        model.addAttribute("informacion", estelem);
+        model.addAttribute("datosEstadoElemento", estelem);
         return "verestadoelementos";
     }
     @GetMapping("/nuevoestadoelemento")

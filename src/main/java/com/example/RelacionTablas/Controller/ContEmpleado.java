@@ -26,7 +26,7 @@ public class ContEmpleado {
         model.addAttribute("titulo", "Ver Empleados");
         model.addAttribute("cuerpo", "Empleados");
         List<Empleado> empl = servicio.Listar();
-        model.addAttribute("informacion", empl);
+        model.addAttribute("datosEmpleado", empl);
         return "verempleados";
     }
 
@@ -36,7 +36,7 @@ public class ContEmpleado {
         model.addAttribute("cuerpo", "Agregar Empleado");
         model.addAttribute("empleado", new Empleado());
         List<Cargo> car = serv.Listar();
-        model.addAttribute("datos", car);
+        model.addAttribute("datosCargo", car);
         return "nuevoempleado";
     }
     @PostMapping("/guardarempleado")
