@@ -45,7 +45,7 @@
         </div>
         &nbsp&nbsp&nbsp&nbsp
         <div class="dropdown">
-          <button class="btn btn-light" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <button class="btn1 btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Estados
           </button>
           <div class="dropdown-content">
@@ -55,7 +55,7 @@
         </div>
         &nbsp&nbsp&nbsp&nbsp
         <div class="dropdown">
-          <button class="btn1 btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <button class="btn btn-light" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Tipo Elementos
           </button>
           <div class="dropdown-content">
@@ -91,11 +91,11 @@
     <div class="col-md-12 container-form" th:text="${cuerpo}"></div>
   </div>
   <br>
-  <form class="row g-3" th:action="@{/guardarestadoelemento}" th:object="${estadoelemento}" method="post">
-    <input type="hidden" th:field="*{idestado}">
+  <form class="row g-3" th:action="@{/guardartipoelemento}" th:object="${tipoelemento}" method="post">
+    <input type="hidden" th:field="*{idtipo}">
     <div class="col-md-12">
-      <label class="form-label">Estado</label>
-      <input type="text" name="estado" class="form-control" th:field="*{nombreestado}" value="" placeholder="Nombre Estado" required>
+      <label class="form-label">Tipo Elemento</label>
+      <input type="text" name="tipoelem" class="form-control" th:field="*{tipoelemen}" value="" placeholder="Tipo Elemento" required>
     </div>
     <div class="col-12">
       <div class="form-check">
@@ -132,6 +132,3 @@
     </div>
   </footer>
 </div>
-
-</body>
-</html>

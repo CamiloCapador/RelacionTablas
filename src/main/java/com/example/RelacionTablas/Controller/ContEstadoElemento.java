@@ -16,6 +16,7 @@ public class ContEstadoElemento {
 
     @Autowired
     private IEstadoElementoService servi;
+
     @GetMapping("/verestadoelementos")
     public String verEstadoElementos (Model model){
         model.addAttribute("titulo", "Ver Estado Elementos");
