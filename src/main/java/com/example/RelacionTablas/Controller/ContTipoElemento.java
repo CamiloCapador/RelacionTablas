@@ -20,7 +20,7 @@ public class ContTipoElemento {
     @GetMapping("/vertipoelementos")
     public String verTipoElemento (Model model){
         model.addAttribute("titulo", "Ver Tipo Elemento");
-        model.addAttribute("titulo", "Tipo Elemento");
+        model.addAttribute("cuerpo", "Tipo Elemento");
         List<TipoElemento> tipoelem = servic.Listar();
         model.addAttribute("datosTipoElemento", tipoelem);
         return "vertipoelementos";
