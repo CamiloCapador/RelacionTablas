@@ -25,7 +25,7 @@
                 <a href="inicio.html"><button type="button" class="btn1 btn-light">Inicio</button></a>
                 &nbsp&nbsp&nbsp&nbsp
                 <div class="dropdown">
-                    <button class="btn btn-light" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="btn1 btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Cargos
                     </button>
                     <div class="dropdown-content">
@@ -65,7 +65,7 @@
                 </div>
                 &nbsp&nbsp&nbsp&nbsp
                 <div class="dropdown">
-                    <button class="btn1 btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="btn btn-light" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Centro Costos
                     </button>
                     <div class="dropdown-content">
@@ -101,15 +101,15 @@
         <div class="col-md-12 container-form" th:text="${cuerpo}"></div>
     </div>
     <br>
-    <form class="row g-3" th:action="@{/guardarcargo}" th:object="${cargo}" method="post">
-        <input type="hidden" th:field="*{idcargo}">
+    <form class="row g-3" th:action="@{/guardarcentro}" th:object="${centro}" method="post">
+        <input type="hidden" th:field="*{idcentro}">
         <div class="col-md-6">
-            <label class="form-label">Cargo</label>
-            <input type="text" name="cargo" class="form-control" th:field="*{nombrecargo}" value="" placeholder="Ingrese Cargo" required>
+            <label class="form-label">Código</label>
+            <input type="text" name="codigo" class="form-control" th:field="*{codigocentro}" value="" placeholder="Código" required>
         </div>
         <div class="col-md-6">
-            <label class="form-label">Salario</label>
-            <input type="number" name="salario" class="form-control" th:field="*{salario}" value="" placeholder="Salario" required>
+            <label class="form-label">Centro De Costos</label>
+            <input type="text" name="centro" class="form-control" th:field="*{nombrecentro}" value="" placeholder="Centro De Costos" required>
         </div>
         <div class="col-12">
             <div class="form-check">
@@ -146,6 +146,3 @@
         </div>
     </footer>
 </div>
-
-</body>
-</html>

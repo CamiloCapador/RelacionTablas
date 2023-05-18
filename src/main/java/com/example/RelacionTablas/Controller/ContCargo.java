@@ -24,6 +24,7 @@ public class ContCargo {
         model.addAttribute("datosCargo", car);
         return "index";
     }
+
     @GetMapping("/nuevocargo")
     public String formAgregarCargo (Model model){
         model.addAttribute("titulo", "Nuevo Cargo");
@@ -37,11 +38,13 @@ public class ContCargo {
         serv.guardar(car);
         return "redirect:/vercargos";
     }
+
     @GetMapping("/editarcargo/{id}")
     public String editarCargo (@PathVariable("id") int id, Model model){
         model.addAttribute("cargo", serv.editar(id));
         return "nuevocargo";
     }
+
     @GetMapping("/eliminarcargo/{id}")
     public String eliminarCargo(@PathVariable("id") int id){
         serv.eliminar(id);

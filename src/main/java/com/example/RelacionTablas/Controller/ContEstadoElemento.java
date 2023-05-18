@@ -25,6 +25,7 @@ public class ContEstadoElemento {
         model.addAttribute("datosEstadoElemento", estelem);
         return "verestadoelementos";
     }
+
     @GetMapping("/nuevoestadoelemento")
     public String formAgregarEstadoElemento (Model model){
         model.addAttribute("titulo", "Nuevo Estado Elemento");
@@ -32,11 +33,13 @@ public class ContEstadoElemento {
         model.addAttribute("estadoelemento", new EstadoElemento());
         return "nuevoestadoelemento";
     }
+
     @PostMapping("/guardarestadoelemento")
     public String guardarEstadoElemento (@ModelAttribute EstadoElemento estelem){
         servi.guardar(estelem);
         return "redirect:/verestadoelementos";
     }
+
     @GetMapping("/editarestadoelemento/{id}")
     public String editarEstadoElemento(@PathVariable("id") int id, Model model){
         model.addAttribute("estadoelemento", servi.editar(id));

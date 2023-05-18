@@ -39,6 +39,7 @@ public class ContEmpleado {
         model.addAttribute("datosCargo", car);
         return "nuevoempleado";
     }
+
     @PostMapping("/guardarempleado")
     public String guardarEmpleado(@ModelAttribute Empleado empl){
         servicio.guardar(empl);
@@ -50,6 +51,7 @@ public class ContEmpleado {
         model.addAttribute("empleado", servicio.editar(id));
         return "nuevoempleado";
     }
+
     @GetMapping("/eliminarempleado/{id}")
     public String eliminarEmpleado(@PathVariable("id") int id){
         servicio.eliminar(id);

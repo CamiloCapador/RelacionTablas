@@ -13,6 +13,8 @@ public class Centro {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idcentro;
+
+    private String codigocentro;
     private String nombrecentro;
 
     @OneToMany(mappedBy = "centro", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})

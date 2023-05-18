@@ -25,6 +25,7 @@ public class ContTipoElemento {
         model.addAttribute("datosTipoElemento", tipoelem);
         return "vertipoelementos";
     }
+
     @GetMapping("/nuevotipoelemento")
     public String formAgregarTipoElemento (Model model){
         model.addAttribute("titulo", "Nuevo Tipo Elemento");
@@ -44,6 +45,7 @@ public class ContTipoElemento {
         model.addAttribute("tipoelemento", servic.editar(id));
         return "nuevotipoelemento";
     }
+
     @GetMapping("/eliminartipoelemento/{id}")
     public String eliminarTipoElemento(@PathVariable("id") int id){
         servic.eliminar(id);
