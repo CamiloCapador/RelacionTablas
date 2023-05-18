@@ -1,5 +1,7 @@
 body {
     background-color:rgb(241, 241, 245);
+    position: relative;
+    min-height: 100vh;
 }
 
 .container-fluid {
@@ -94,6 +96,12 @@ body {
 
 .label{
     color: azure;
+}
+
+footer{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
 }
 
 .footer-clean {
