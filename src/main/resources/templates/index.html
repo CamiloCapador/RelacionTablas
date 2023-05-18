@@ -58,6 +58,16 @@
                 </div>
                 &nbsp&nbsp&nbsp&nbsp
                 <div class="dropdown">
+                    <button class="btn1 btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Tipo Elementos
+                    </button>
+                    <div class="dropdown-content">
+                        <a class="dropdown-item" th:href="@{/vertipoelementos}">Ver</a>
+                        <a class="dropdown-item" th:href="@{/nuevotipoelemento}">Registrar</a>
+                    </div>
+                </div>
+                &nbsp&nbsp&nbsp&nbsp
+                <div class="dropdown">
                     <button class="btn"><img src="../images/icono_perfil.png" alt="" type="button" aria-expanded="false"></button>
                     <div class="dropdown-content">
                         <a class="dropdown-item" href="perfil.php">Perfil</a>
@@ -120,6 +130,11 @@
     <br>
     <br>
 </div>
+
+<br>
+<br>
+<br>
+<br>
 
 <!-- Referencia JQuery Datatable -->
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
