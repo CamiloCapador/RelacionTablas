@@ -22,6 +22,10 @@ public class Empleado {
     private int cedula;
     private String emailempl;
     private boolean estado;
+    @PrePersist
+    public void prePersist(){
+        estado = true;
+    }
     @ManyToOne
     @JoinColumn(name = "idcargo")
     private Cargo cargo;

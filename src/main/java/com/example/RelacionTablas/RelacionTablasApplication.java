@@ -8,8 +8,8 @@ public class RelacionTablasApplication {
 
 	public static void main(String[] args) {
 
-		//JUAN CAMILO GARZON CAPADOR
-		//ID 700935
+		//JUAN CAMILO GARZON CAPADOR - YERSON ANDRES MARTINEZ LOPEZ
+		//ID 700935 - 708115
 
 		SpringApplication.run(RelacionTablasApplication.class, args);
 	}
