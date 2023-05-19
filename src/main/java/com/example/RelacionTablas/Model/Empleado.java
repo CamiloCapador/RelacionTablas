@@ -2,9 +2,6 @@ package com.example.RelacionTablas.Model;
 
 import jakarta.persistence.*;
 import lombok.Data;
-import lombok.Value;
-import org.springframework.boot.autoconfigure.web.WebProperties;
-import org.springframework.boot.context.properties.bind.DefaultValue;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.List;

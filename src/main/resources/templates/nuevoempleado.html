@@ -125,6 +125,12 @@
           <option th:each="i: ${datosCargo}"  th:value="${i.idcargo}" th:text="${i.nombrecargo}" selected> Seleccione Cargo </option>
         </select>
       </div>
+      <div class="col-md-4">
+        <label class="form-label">Centro De Costos</label>
+        <select class="form-select" th:field="*{centro}" name="centro" required>
+          <option th:each="i: ${datosCentro}" th:value="${i.idcentro}" th:text="${i.nombrecentro}" selected> Seleccione Centro De Cosotos </option>
+        </select>
+      </div>
       <div class="col-12">
         <div class="form-check">
           <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>

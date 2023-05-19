@@ -1,8 +1,10 @@
 package com.example.RelacionTablas.Controller;
 
 import com.example.RelacionTablas.IntService.ICargoService;
+import com.example.RelacionTablas.IntService.ICentroService;
 import com.example.RelacionTablas.IntService.IEmpleadoService;
 import com.example.RelacionTablas.Model.Cargo;
+import com.example.RelacionTablas.Model.Centro;
 import com.example.RelacionTablas.Model.Empleado;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,10 +18,13 @@ import java.util.List;
 public class ContEmpleado {
 
     @Autowired
+    private IEmpleadoService servicio;
+
+    @Autowired
     private ICargoService serv;
 
     @Autowired
-    private IEmpleadoService servicio;
+    private ICentroService ser;
 
     @GetMapping("/verempleados")
     public String verEmpleados (Model model){
@@ -37,6 +42,8 @@ public class ContEmpleado {
         model.addAttribute("empleado", new Empleado());
         List<Cargo> car = serv.Listar();
         model.addAttribute("datosCargo", car);
+        List<Centro> cen = ser.Listar();
+        model.addAttribute("datosCentro", cen);
         return "nuevoempleado";
     }
 

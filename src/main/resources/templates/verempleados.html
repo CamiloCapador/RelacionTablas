@@ -115,6 +115,7 @@
           <th scope="col">Cedula</th>
           <th scope="col">Correo</th>
           <th scope="col">Cargo</th>
+          <th scope="col">Centro De Costos</th>
           <th scope="col">Accion</th>
         </tr>
         </thead>
@@ -127,6 +128,7 @@
         <td th:text="${tempList.cedula}"></td>
         <td th:text="${tempList.emailempl}"></td>
         <td th:text="${tempList.cargo.nombrecargo}"></td>
+        <td th:text="${tempList.centro.nombrecentro}"></td>
         <td>
           <a class="btn btn-outline-primary" th:href="@{/editarempleado/} + ${tempList.idempl}">Editar</a>
           <a class="btn btn-outline-primary" th:href="@{/eliminarempleado/} + ${tempList.idempl}">Eliminar</a>
@@ -141,6 +143,7 @@
         <th scope="col">Cedula</th>
         <th scope="col">Correo</th>
         <th scope="col">Cargo</th>
+        <th scope="col">Centro De Costos</th>
         <th scope="col">Accion</th>
       </tr>
       </tfoot>
