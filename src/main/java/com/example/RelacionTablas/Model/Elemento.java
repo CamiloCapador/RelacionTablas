@@ -16,7 +16,7 @@ public class Elemento {
     private Date fechaasignacion;
     private String marca;
     private String modelo;
-    private String sn;
+    private String serial;
     private String placa;
 
     @ManyToOne
