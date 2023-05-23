@@ -8,7 +8,6 @@ import java.util.Optional;
 public interface IEstadoElementoService {
 
     public List<EstadoElemento> Listar();
-
     List<EstadoElemento> lista();
 
     public Optional<EstadoElemento> editar(int id);

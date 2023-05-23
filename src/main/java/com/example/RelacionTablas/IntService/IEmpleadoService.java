@@ -8,7 +8,6 @@ import java.util.Optional;
 public interface IEmpleadoService {
 
     public List<Empleado> Listar();
-
     List<Empleado> Lista();
 
     public Optional<Empleado> editar(int id);

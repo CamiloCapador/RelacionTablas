@@ -8,12 +8,9 @@ import java.util.Optional;
 public interface ITipoElementoService {
 
     public List<TipoElemento> Listar();
-
     List<TipoElemento> lista();
 
     public Optional <TipoElemento> editar (int id);
-
     public void guardar (TipoElemento tipoelem);
-
     public void eliminar (int id);
 }
