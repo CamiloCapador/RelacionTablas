@@ -3,7 +3,7 @@ package com.example.RelacionTablas.Model;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.Date;
+import java.sql.Date;
 
 @Data
 @Entity
@@ -22,7 +22,6 @@ public class Elemento {
     @ManyToOne
     @JoinColumn(name = "idempl")
     private Empleado empleado;
-
 
     @ManyToOne
     @JoinColumn(name = "idtipo")

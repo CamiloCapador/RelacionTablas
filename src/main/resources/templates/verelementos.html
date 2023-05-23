@@ -38,7 +38,17 @@
                 </div>
                 &nbsp&nbsp&nbsp&nbsp
                 <div class="dropdown">
-                    <button class="btn btn-light" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="btn1 btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Centro Costos
+                    </button>
+                    <div class="dropdown-content">
+                        <a class="dropdown-item" th:href="@{/vercentros}">Ver</a>
+                        <a class="dropdown-item" th:href="@{/nuevocentro}">Registrar</a>
+                    </div>
+                </div>
+                &nbsp&nbsp&nbsp&nbsp
+                <div class="dropdown">
+                    <button class="btn1 btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Empleados
                     </button>
                     <div class="dropdown-content">
@@ -68,12 +78,12 @@
                 </div>
                 &nbsp&nbsp&nbsp&nbsp
                 <div class="dropdown">
-                    <button class="btn1 btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Centro Costos
+                    <button class="btn btn-light" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Elementos
                     </button>
                     <div class="dropdown-content">
-                        <a class="dropdown-item" th:href="@{/vercentros}">Ver</a>
-                        <a class="dropdown-item" th:href="@{/nuevocentro}">Registrar</a>
+                        <a class="dropdown-item" th:href="@{/verelementos}">Ver</a>
+                        <a class="dropdown-item" th:href="@{/nuevoelemento}">Registrar</a>
                     </div>
                 </div>
                 &nbsp&nbsp&nbsp&nbsp
@@ -118,6 +128,7 @@
                 <th scope="col">Tipo Elemento</th>
                 <th scope="col">Estado</th>
                 <th scope="col">Asignado A</th>
+                <th scope="col">Acción</th>
             </tr>
             </thead>
         </div>
@@ -130,8 +141,8 @@
             <td th:text="${tempList.placa}"></td>
             <td th:text="${tempList.serial}"></td>
             <td th:text="${tempList.tipoelemento.tipoelemen}"></td>
-            <td th:text="${tempList.estado.nombreestado}"></td>
-            <td th:text="${tempList.empleado.nombreempl}"></td>
+            <td th:text="${tempList.estadoelemento.nombreestado}"></td>
+            <td th:text="${tempList.empleado.nombreempl} + ${tempList.empleado.apellidoempl}"></td>
             <td>
                 <a class="btn btn-outline-primary" th:href="@{/editarelemento/} + ${tempList.idelemen}">Editar</a>
                 <a class="btn btn-outline-primary" th:href="@{/eliminarelemento/} + ${tempList.idelemen}">Eliminar</a>
@@ -149,7 +160,7 @@
             <th scope="col">Tipo Elemento</th>
             <th scope="col">Estado</th>
             <th scope="col">Asignado A</th>
-
+            <th scope="col">Acción</th>
         </tr>
         </tfoot>
     </table>

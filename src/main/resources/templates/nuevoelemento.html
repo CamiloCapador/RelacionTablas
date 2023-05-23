@@ -11,9 +11,6 @@
   <link href="../inicio.css" rel="stylesheet">
   <link href="https://i.ibb.co/PQ329Nx/LOGO-SEDIAL-24px-Mesa-de-trabajo-1.png" rel="icon" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
-  <!--Conexión CSS Datatable-->
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap4.min.css">
   <title th:text="${titulo}"></title>
 </head>
 <body>
@@ -38,7 +35,7 @@
         </div>
         &nbsp&nbsp&nbsp&nbsp
         <div class="dropdown">
-          <button class="btn btn-light" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <button class="btn1 btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Centro Costos
           </button>
           <div class="dropdown-content">
@@ -78,7 +75,7 @@
         </div>
         &nbsp&nbsp&nbsp&nbsp
         <div class="dropdown">
-          <button class="btn1 btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <button class="btn btn-light" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Elementos
           </button>
           <div class="dropdown-content">
@@ -108,63 +105,75 @@
 <br>
 
 <div class="container">
-
   <div class="row">
     <br>
     <br>
     <div class="col-md-12 container-form" th:text="${cuerpo}"></div>
   </div>
   <br>
-  <table id="example" class="table table-striped table-bordered" style="width:100%">
-    <div class="row">
-      <thead class="">
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Código</th>
-        <th scope="col">Centro De Costos</th>
-        <th scope="col">Accion</th>
-      </tr>
-      </thead>
+  <form class="row g-3" th:action="@{/guardarelemento}" th:object="${elemento}" method="post">
+    <input type="hidden" th:field="*{idelemen}">
+    <div class="col-md-4">
+      <label class="form-label">Fecha</label>
+      <input type="date" name="fecha" class="form-control" th:field="*{fechaasignacion}" value="" required>
     </div>
-    <tbody th:each="tempList: ${datosCentro}">
-    <tr>
-      <td th:text="${tempList.idcentro}"></td>
-      <td th:text="${tempList.codigocentro}"></td>
-      <td th:text="${tempList.nombrecentro}"></td>
-      <td>
-        <a class="btn btn-outline-primary" th:href="@{/editarcentro/} + ${tempList.idcentro}">Editar</a>
-        <a class="btn btn-outline-primary" th:href="@{/eliminarcentro/} + ${tempList.idcentro}">Eliminar</a>
-      </td>
-    </tr>
-    </tbody>
-    <tfoot>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Código</th>
-      <th scope="col">Centro De Costos</th>
-      <th scope="col">Accion</th>
-    </tr>
-    </tfoot>
-  </table>
-  <br>
-  <br>
-  <br>
+    <div class="col-md-4">
+      <label class="form-label">Marca</label>
+      <input type="text" name="marca" class="form-control" th:field="*{marca}" value="" placeholder="Marca" required>
+    </div>
+    <div class="col-md-4">
+      <label class="form-label">Modelo</label>
+      <input type="text" name="modelo" class="form-control" th:field="*{modelo}" value="" placeholder="Modelo" required>
+    </div>
+    <div class="col-md-4">
+      <label class="form-label">Placa</label>
+      <input type="text" name="placa" class="form-control" th:field="*{placa}" placeholder="Placa" required>
+    </div>
+    <div class="col-md-4">
+      <label class="form-label">Serial</label>
+      <input type="text" name="serial" class="form-control" th:field="*{serial}" placeholder="Serial" required>
+    </div>
+    <div class="col-md-4">
+      <label class="form-label">Tipo Elemento</label>
+      <select class="form-select" th:field="*{tipoelemento}" name="tipoelemento" required>
+        <option th:each="i: ${datosTipoElemento}"  th:value="${i.idtipo}" th:text="${i.tipoelemen}" selected> Seleccione Tipo Elemento </option>
+      </select>
+    </div>
+    <div class="col-md-4">
+      <label class="form-label">Estado</label>
+      <select class="form-select" th:field="*{estadoelemento}" name="estadoelemento" required>
+        <option th:each="i: ${datosEstadoElemento}" th:value="${i.idestado}" th:text="${i.nombreestado}" selected> Seleccione Estado </option>
+      </select>
+    </div>
+    <div class="col-md-8">
+      <label class="form-label">Asignado A</label>
+      <select class="form-select" th:field="*{empleado}" name="empleado" required>
+        <option th:each="i: ${datosEmpleado}" th:value="${i.idempl}" th:text="${i.nombreempl} + ${i.apellidoempl}" selected> Empleado </option>
+      </select>
+    </div>
+    <div class="col-12">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+        <label class="form-check-label" for="invalidCheck2">
+          Confirmar Registro
+        </label>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Agregar</button>
+    </div>
+    <br>
+    <br>
+    <br>
+  </form>
 </div>
 
-<!-- Referencia JQuery Datatable -->
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap4.min.js"></script>
-
-<script>
-        $(document).ready(function() {
-            $('#example').DataTable( {
-                language: {
-                    url: 'https://cdn.datatables.net/plug-ins/1.13.1/i18n/es-MX.json'
-                }
-            }  );
-        } );
-   </script>
+<br>
+<br>
+<br>
+<br>
 
 <footer class="footer-clean">
   <div class="container-fluid">
