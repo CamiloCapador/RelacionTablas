@@ -22,7 +22,7 @@ public class ContCargo {
         model.addAttribute("cuerpo", "Cargos");
         List<Cargo> car = serv.Listar();
         model.addAttribute("datosCargo", car);
-        return "index";
+        return "vercargos";
     }
 
     @GetMapping("/nuevocargo")
@@ -50,4 +50,5 @@ public class ContCargo {
         serv.eliminar(id);
         return "redirect:/vercargos";
     }
+
 }
