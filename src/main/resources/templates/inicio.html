@@ -22,7 +22,7 @@
         <div class="header"><img class="imagen" src="../images/logo-blanco-sedial.png" alt="logo_Sedial"/></div>
       </div>
       <div class="column col xl-10">
-        <a th:href="@{/inicio}"><button type="button" class="btn1 btn-light">Inicio</button></a>
+        <a th:href="@{/inicio}"><button type="button" class="btn btn-light">Inicio</button></a>
         &nbsp&nbsp&nbsp&nbsp
         <div class="dropdown">
           <button class="btn1 btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -75,7 +75,7 @@
         </div>
         &nbsp&nbsp&nbsp&nbsp
         <div class="dropdown">
-          <button class="btn btn-light" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <button class="btn1 btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Elementos
           </button>
           <div class="dropdown-content">
@@ -103,71 +103,35 @@
 <br>
 <br>
 <br>
+<br>
+<br>
+<br>
 
-<div class="container">
-  <div class="row">
-    <br>
-    <br>
-    <div class="col-md-12 container-form" th:text="${cuerpo}"></div>
+<div class="contents">
+  <div class="contents col-xl-6">
+    <a th:href="@{/verempleados}"><img src="../images/registro_colb.png" alt="Registrar Colaborador"></a>
+  </div>
+  <div class="contents col-xl-6">
+    <a th:href="@{/verelementos}"><img src="../images/registro_elem.png" alt="Registrar Elemento"></a>
+  </div>
+</div>
+<br>
+<div class="contents">
+  <div class="contents col-xl-6">
+    <a th:href="@{/nuevoempleado}"><button class="btn btn-outline-primary">
+      <span class="button__text">Registrar</span>
+    </button></a>
   </div>
   <br>
-  <form class="row g-3" th:action="@{/guardarelemento}" th:object="${elemento}" method="post">
-    <input type="hidden" th:field="*{idelemen}">
-    <div class="col-md-4">
-      <label class="form-label">Fecha</label>
-      <input type="date" name="fecha" class="form-control" th:field="*{fechaasignacion}" value="" required>
-    </div>
-    <div class="col-md-4">
-      <label class="form-label">Marca</label>
-      <input type="text" name="marca" class="form-control" th:field="*{marca}" value="" placeholder="Marca" required>
-    </div>
-    <div class="col-md-4">
-      <label class="form-label">Modelo</label>
-      <input type="text" name="modelo" class="form-control" th:field="*{modelo}" value="" placeholder="Modelo" required>
-    </div>
-    <div class="col-md-4">
-      <label class="form-label">Placa</label>
-      <input type="text" name="placa" class="form-control" th:field="*{placa}" placeholder="Placa" required>
-    </div>
-    <div class="col-md-4">
-      <label class="form-label">Serial</label>
-      <input type="text" name="serial" class="form-control" th:field="*{serial}" placeholder="Serial" required>
-    </div>
-    <div class="col-md-4">
-      <label class="form-label">Tipo Elemento</label>
-      <select class="form-select" th:field="*{tipoelemento}" name="tipoelemento" required>
-        <option th:each="i: ${datosTipoElemento}"  th:value="${i.idtipo}" th:text="${i.tipoelemen}" selected> Seleccione Tipo Elemento </option>
-      </select>
-    </div>
-    <div class="col-md-4">
-      <label class="form-label">Estado</label>
-      <select class="form-select" th:field="*{estadoelemento}" name="estadoelemento" required>
-        <option th:each="i: ${datosEstadoElemento}" th:value="${i.idestado}" th:text="${i.nombreestado}" selected> Seleccione Estado </option>
-      </select>
-    </div>
-    <div class="col-md-8">
-      <label class="form-label">Asignado A</label>
-      <select class="form-select" th:field="*{empleado}" name="empleado" required>
-        <option th:each="i: ${datosEmpleado}" th:value="${i.idempl}" th:text="${i.nombreempl} + ${i.apellidoempl}" selected> Empleado </option>
-      </select>
-    </div>
-    <div class="col-12">
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
-        <label class="form-check-label" for="invalidCheck2">
-          Confirmar Registro
-        </label>
-      </div>
-    </div>
-    <br>
-    <br>
-    <div class="col-12">
-      <button class="btn btn-primary" type="submit">Agregar</button>
-    </div>
-    <br>
-    <br>
-    <br>
-  </form>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="contents col-xl-6">
+    <a th:href="@{/nuevoelemento}"><button class="btn btn-outline-primary">
+      <span class="button__text">Registrar</span>
+    </button></a>
+  </div>
 </div>
 
 <br>
@@ -178,8 +142,7 @@
 <footer class="footer-clean">
   <div class="container-fluid">
     <div class="row justify-content-center">
-      <div class="col-lg-4 item social"><a href="www.facebook.com"><i class="icon ion-social-facebook"></i></a><a href="www.twitter.com"><i class="icon ion-social-twitter"></i></a><a href="wwww.whastsapp.com"><i class="icon ion-social-whatsapp"></i></a><a href="www.instagram.com"><i class="icon ion-social-instagram"></i></a>
-        <p class="copyright">Sedial S.A.S © 2023 Todos los derechos reservados</p>
+      <div class="col-lg-4 item social"><a href="www.facebook.com"><i class="icon ion-social-facebook"></i></a><a href="www.twitter.com"><i class="icon ion-social-twitter"></i></a><a href="wwww.whastsapp.com"><i class="icon ion-social-whatsapp"></i></a><a href="www.instagram.com"><i class="icon ion-social-instagram"></i></a><p class="copyright">Sedial S.A.S © 2023 Todos los derechos reservados</p>
       </div>
     </div>
   </div>

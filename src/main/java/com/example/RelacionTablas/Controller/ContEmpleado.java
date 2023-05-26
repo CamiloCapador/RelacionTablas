@@ -28,8 +28,8 @@ public class ContEmpleado {
 
     @GetMapping("/verempleados")
     public String verEmpleados (Model model){
-        model.addAttribute("titulo", "Ver Empleados");
-        model.addAttribute("cuerpo", "Empleados");
+        model.addAttribute("titulo", "Ver Colaborador");
+        model.addAttribute("cuerpo", "Colaboradores");
         List<Empleado> empl = servicio.Listar();
         model.addAttribute("datosEmpleado", empl);
         return "verempleados";
@@ -37,8 +37,8 @@ public class ContEmpleado {
 
     @GetMapping("/nuevoempleado")
     public String formAgregarEmpleado (Model model){
-        model.addAttribute("titulo", "Nuevo Empleado");
-        model.addAttribute("cuerpo", "Agregar Empleado");
+        model.addAttribute("titulo", "Nuevo Colaborador");
+        model.addAttribute("cuerpo", "Agregar Colaborador");
         model.addAttribute("empleado", new Empleado());
         List<Cargo> car = serv.Listar();
         model.addAttribute("datosCargo", car);
