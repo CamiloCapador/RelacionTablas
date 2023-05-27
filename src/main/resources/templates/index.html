@@ -118,9 +118,11 @@
 <br>
 <div class="contents">
   <div class="contents col-xl-6">
-    <a th:href="@{/nuevoempleado}"><button class="btn btn-outline-primary">
-      <span class="button__text">Registrar</span>
-    </button></a>
+    <a th:href="@{/nuevoempleado}">
+      <button th:if="${username == admin}" class="btn btn-outline-primary">
+        <span class="button__text">Registrar</span>
+      </button>
+    </a>
   </div>
   <br>
   <br>
@@ -128,9 +130,11 @@
   <br>
   <br>
   <div class="contents col-xl-6">
-    <a th:href="@{/nuevoelemento}"><button class="btn btn-outline-primary">
-      <span class="button__text">Registrar</span>
-    </button></a>
+    <a th:href="@{/nuevoelemento}">
+      <button th:if="${username == admin}" class="btn btn-outline-primary">
+        <span class="button__text">Registrar</span>
+    </button>
+    </a>
   </div>
 </div>
 

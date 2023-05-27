@@ -19,6 +19,8 @@ public class ContEmpleado {
 
     @Autowired
     private IEmpleadoService servicio;
+    @Autowired
+    private IEmpleadoService servicioDos;
 
     @Autowired
     private ICargoService serv;
@@ -55,13 +57,13 @@ public class ContEmpleado {
 
     @GetMapping("/editarempleado/{id}")
     public String editarEmpleado (@PathVariable("id") int id, Model model){
-        model.addAttribute("empleado", servicio.editar(id));
+        model.addAttribute("empleado", servicioDos.editar(id));
         return "nuevoempleado";
     }
 
     @GetMapping("/eliminarempleado/{id}")
     public String eliminarEmpleado(@PathVariable("id") int id){
-        servicio.eliminar(id);
+        servicioDos.eliminar(id);
         return "redirect:/verempleados";
     }
 }
