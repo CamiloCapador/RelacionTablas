@@ -138,7 +138,7 @@
         <td th:text="${tempList.cedula}"></td>
         <td th:text="${tempList.emailempl}"></td>
         <td th:text="${tempList.cargo.nombrecargo}"></td>
-        <td th:text="${tempList.centro.codigocentro} +  ${tempList.centro.nombrecentro}"></td>
+        <td th:text="${tempList.centro.codigocentro}  +  ${tempList.centro.nombrecentro}"></td>
         <td>
           <a class="btn btn-outline-primary" th:href="@{/editarempleado/} + ${tempList.idempl}">Editar</a>
           <a class="btn btn-outline-primary" th:href="@{/eliminarempleado/} + ${tempList.idempl}">Eliminar</a>
