@@ -7,11 +7,13 @@ import com.example.RelacionTablas.Model.Cargo;
 import com.example.RelacionTablas.Model.Centro;
 import com.example.RelacionTablas.Model.Empleado;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping
@@ -29,7 +31,7 @@ public class ContEmpleado {
     private ICentroService ser;
 
     @GetMapping("/verempleados")
-    public String verEmpleados (Model model){
+    public String verEmpleados(Model model) {
         model.addAttribute("titulo", "Ver Colaborador");
         model.addAttribute("cuerpo", "Colaboradores");
         List<Empleado> empl = servicio.Listar();
@@ -38,7 +40,7 @@ public class ContEmpleado {
     }
 
     @GetMapping("/nuevoempleado")
-    public String formAgregarEmpleado (Model model){
+    public String formAgregarEmpleado(Model model) {
         model.addAttribute("titulo", "Nuevo Colaborador");
         model.addAttribute("cuerpo", "Agregar Colaborador");
         model.addAttribute("empleado", new Empleado());
@@ -50,20 +52,20 @@ public class ContEmpleado {
     }
 
     @PostMapping("/guardarempleado")
-    public String guardarEmpleado(@ModelAttribute Empleado empl){
+    public String guardarEmpleado(@ModelAttribute Empleado empl) {
         servicio.guardar(empl);
         return "redirect:/verempleados";
     }
 
     @GetMapping("/editarempleado/{id}")
-    public String editarEmpleado (@PathVariable("id") int id, Model model){
-        model.addAttribute("empleado", servicioDos.editar(id));
+    public String editarEmpleado(@PathVariable("id") int id, Model model) {
+        model.addAttribute("empleado", servicio.editar(id));
         return "nuevoempleado";
     }
 
     @GetMapping("/eliminarempleado/{id}")
     public String eliminarEmpleado(@PathVariable("id") int id){
-        servicioDos.eliminar(id);
+        servicio.eliminar(id);
         return "redirect:/verempleados";
     }
 }
