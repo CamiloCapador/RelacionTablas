@@ -142,7 +142,7 @@
             <td th:text="${tempList.serial}"></td>
             <td th:text="${tempList.tipoelemento.tipoelemen}"></td>
             <td th:text="${tempList.estadoelemento.nombreestado}"></td>
-            <td th:text="${tempList.empleado.nombreempl} + ${tempList.empleado.apellidoempl}"></td>
+            <td th:text="${tempList.empleado.nombreempl} + ' ' + ${tempList.empleado.apellidoempl}"></td>
             <td>
                 <a class="btn btn-outline-primary" th:href="@{/editarelemento/} + ${tempList.idelemen}">Editar</a>
                 <a class="btn btn-outline-primary" th:href="@{/eliminarelemento/} + ${tempList.idelemen}">Eliminar</a>

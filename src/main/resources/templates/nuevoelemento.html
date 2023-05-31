@@ -148,7 +148,7 @@
     <div class="col-md-8">
       <label class="form-label">Asignado A</label>
       <select class="form-select" th:field="*{empleado}" name="empleado" required>
-        <option th:each="i: ${datosEmpleado}" th:value="${i.idempl}" th:text="${i.nombreempl} + ${i.apellidoempl}" selected> Empleado </option>
+        <option th:each="i: ${datosEmpleado}" th:value="${i.idempl}" th:text="${i.nombreempl} + ' ' + ${i.apellidoempl}" selected> Empleado </option>
       </select>
     </div>
     <div class="col-12">
