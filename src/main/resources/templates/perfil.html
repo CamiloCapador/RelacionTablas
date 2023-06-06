@@ -11,9 +11,6 @@
   <link href="../inicio.css" rel="stylesheet">
   <link href="https://i.ibb.co/PQ329Nx/LOGO-SEDIAL-24px-Mesa-de-trabajo-1.png" rel="icon" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
-  <!--Conexión CSS Datatable-->
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap4.min.css">
   <title th:text="${titulo}"></title>
 </head>
 <body>
@@ -25,7 +22,7 @@
         <div class="header"><img class="imagen" src="../images/logo-blanco-sedial.png" alt="logo_Sedial"/></div>
       </div>
       <div class="column col xl-10">
-        <a th:href="@{/inicio}"><button type="button" class="btn1 btn-light">Inicio</button></a>
+        <a th:href="@{/inicio}"><button type="button" class="btn1 btn-secondary">Inicio</button></a>
         &nbsp&nbsp&nbsp&nbsp
         <div class="dropdown">
           <button class="btn1 btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -38,7 +35,7 @@
         </div>
         &nbsp&nbsp&nbsp&nbsp
         <div class="dropdown">
-          <button class="btn btn-light" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <button class="btn1 btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             Centro Costos
           </button>
           <div class="dropdown-content">
@@ -99,78 +96,105 @@
   </header>
 </div>
 
-<!-- <div class="contents">
-    <img class="banner" src="../images/banner-colaboradores.jpg" alt="Banner Colaboradores">
-</div> -->
-
-<br>
-<br>
-<br>
-
-<div class="container">
-
-  <div class="row">
-    <br>
-    <br>
-    <div class="col-md-12 container-form" th:text="${cuerpo}"></div>
-  </div>
-  <br>
-  <table id="example" class="table table-striped table-bordered" style="width:100%">
-    <div class="row">
-      <thead class="">
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Código</th>
-        <th scope="col">Centro De Costos</th>
-        <th scope="col">Accion</th>
-      </tr>
-      </thead>
-    </div>
-    <tbody th:each="tempList: ${datosCentro}">
-    <tr>
-      <td th:text="${tempList.idcentro}"></td>
-      <td th:text="${tempList.codigocentro}"></td>
-      <td th:text="${tempList.nombrecentro}"></td>
-      <td>
-        <a class="btn btn-outline-primary" th:href="@{/editarcentro/} + ${tempList.idcentro}">Editar</a>
-        <a class="btn btn-outline-primary" th:href="@{/eliminarcentro/} + ${tempList.idcentro}">Eliminar</a>
-      </td>
-    </tr>
-    </tbody>
-    <tfoot>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Código</th>
-      <th scope="col">Centro De Costos</th>
-      <th scope="col">Accion</th>
-    </tr>
-    </tfoot>
-  </table>
-  <br>
-  <br>
-  <br>
+<div class="contents">
+  <img class="banner" src="../images/banner-perfil.jpg" alt="Banner Perfil">
 </div>
 
-<!-- Referencia JQuery Datatable -->
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap4.min.js"></script>
+<br>
+<br>
 
-<script>
-        $(document).ready(function() {
-            $('#example').DataTable( {
-                language: {
-                    url: 'https://cdn.datatables.net/plug-ins/1.13.1/i18n/es-MX.json'
-                }
-            }  );
-        } );
-   </script>
+<section style="background-color: rgb(241, 241, 245);">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card mb-4">
+          <div class="card-body text-center">
+            <img src="../images/perfil.webp" alt="perfil"
+                 class="rounded-circle img-fluid" style="width: 150px;">
+            <h5 class="my-3">JUAN CAMILO GARZON</h5>
+            <p class="text-muted mb-1">PRACTICANTE SISTEMAS</p>
+            <p class="text-muted mb-4">ADMINISTRACIÓN</p>
+            <div class="d-flex justify-content-center mb-2">
+              <button type="button" class="btn btn-primary">Editar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Nombre</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">Juan Camilo Garzón</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Cargo</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">Practicante Sistemas</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Correo</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">aprendizsistemas@sedialgroup.com.co</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Cedula</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">1003704645</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Celular</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">3134644175</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Centro de Costo</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">Administración</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <br>
+      <br>
+    </div>
+    <br>
+    <br>
+  </div>
+</section>
+
+<br>
+<br>
 
 <footer class="footer-clean">
   <div class="container-fluid">
     <div class="row justify-content-center">
-      <div class="col-lg-4 item social"><a href="www.facebook.com"><i class="icon ion-social-facebook"></i></a><a href="www.twitter.com"><i class="icon ion-social-twitter"></i></a><a href="wwww.whastsapp.com"><i class="icon ion-social-whatsapp"></i></a><a href="www.instagram.com"><i class="icon ion-social-instagram"></i></a>
-        <p class="copyright">Sedial S.A.S © 2023 Todos los derechos reservados</p>
+      <div class="col-lg-4 item social"><a href="www.facebook.com"><i class="icon ion-social-facebook"></i></a><a href="www.twitter.com"><i class="icon ion-social-twitter"></i></a><a href="wwww.whastsapp.com"><i class="icon ion-social-whatsapp"></i></a><a href="www.instagram.com"><i class="icon ion-social-instagram"></i></a><p class="copyright">Sedial S.A.S © 2023 Todos los derechos reservados</p>
       </div>
     </div>
   </div>

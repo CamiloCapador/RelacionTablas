@@ -87,7 +87,7 @@
         <div class="dropdown">
           <button class="btn"><img src="../images/icono_perfil.png" alt="" type="button" aria-expanded="false"></button>
           <div class="dropdown-content">
-            <a class="dropdown-item" href="perfil.php">Perfil</a>
+            <a class="dropdown-item" th:href="@{/perfil}">Perfil</a>
             <a class="dropdown-item" href="../index.html">Salir</a>
           </div>
         </div>
@@ -96,9 +96,9 @@
   </header>
 </div>
 
-<!-- <div class="contents">
-    <img class="banner" src="../images/banner-colaboradores.jpg" alt="Banner Colaboradores">
-</div> -->
+<div class="contents">
+    <img class="banner" src="../images/banner-registro.jpg" alt="Banner Registro">
+</div>
 
 <br>
 <br>
@@ -109,17 +109,17 @@
 
 <div class="contents">
   <div class="contents col-xl-6">
-    <a th:href="@{/verempleados}"><img src="../images/registro_colb.png" alt="Registrar Colaborador"></a>
+    <a th:href="@{/nuevoempleado}"><img src="../images/registro_colb.png" alt="Registrar Colaborador"></a>
   </div>
   <div class="contents col-xl-6">
-    <a th:href="@{/verelementos}"><img src="../images/registro_elem.png" alt="Registrar Elemento"></a>
+    <a th:href="@{/nuevoelemento}"><img src="../images/registro_elem.png" alt="Registrar Elemento"></a>
   </div>
 </div>
 <br>
 <div class="contents">
   <div class="contents col-xl-6">
     <a th:href="@{/nuevoempleado}">
-      <button th:if="${username == admin}" class="btn btn-outline-primary">
+      <button class="btn btn-outline-primary">
         <span class="button__text">Registrar</span>
       </button>
     </a>
@@ -131,7 +131,7 @@
   <br>
   <div class="contents col-xl-6">
     <a th:href="@{/nuevoelemento}">
-      <button th:if="${username == admin}" class="btn btn-outline-primary">
+      <button class="btn btn-outline-primary">
         <span class="button__text">Registrar</span>
     </button>
     </a>
