@@ -9,7 +9,6 @@ public class RelacionTablasApplication {
 	public static void main(String[] args) {
 
 		//JUAN CAMILO GARZON CAPADOR
-		//YERSON ANDRES MARTINEZ LOPEZ
 
 		SpringApplication.run(RelacionTablasApplication.class, args);
 	}
